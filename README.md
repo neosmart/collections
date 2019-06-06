@@ -31,11 +31,12 @@ with updates and new collections added as they are needed by the author's other 
 * [`SortedList<T>`](docs/SortedList.md), a true sorted list implementation (directly indexed without
   a separate key) with better memory usage than the BCL's `System.Collections.SortedList<K,V>` and
   with significantly better performance than `System.Collections.SortedSet` (while still allowing
-  duplicate data).
+  duplicate data) **when adding data in order**.
 * [`UniqueSortedList<T>`](docs/UniqueSortedList.md), a deduplicated version of `SortedList<T>`.
 * [`ResizableArray<T>`](docs/ResizableArray.md), an object-oriented wrapper around `T[]` that
   directly exposes various typically accessed via `Array.*` methods, to be used when you'd use a
-  `List<T>` but you need to also directly access the underlying array.
+  `List<T>` but you need to also directly access the underlying array to interop with poorly
+  designed APIs.
 
 ## Installation
 
