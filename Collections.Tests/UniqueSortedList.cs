@@ -6,7 +6,7 @@ using System.Text;
 namespace NeoSmart.Collections.Tests
 {
     [TestClass]
-    public class UniqueSortedList
+    public class UniqueSortedListTests
     {
         [TestMethod]
         public void TestUniqueCreation()
