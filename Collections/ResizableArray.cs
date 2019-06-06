@@ -7,10 +7,10 @@ namespace NeoSmart.Collections
 {
     public class ResizableArray<T> :  ICollection, IReadOnlyList<T>
     {
-        private T[] _inner;
-        public T[] Inner => _inner;
+        private T[] _array;
+        public T[] Array => _array;
 
-        public int Count => _inner.Length;
+        public int Count => _array.Length;
 
         public bool IsReadOnly => false;
 
@@ -25,7 +25,7 @@ namespace NeoSmart.Collections
 
         public ResizableArray(int initialSize)
         {
-            _inner = new T[initialSize];
+            _array = new T[initialSize];
         }
 
         public ResizableArray(IReadOnlyList<T> values)
@@ -42,17 +42,17 @@ namespace NeoSmart.Collections
             }
 
             int initialCapacity = 2;
-            _inner = new T[initialCapacity];
+            _array = new T[initialCapacity];
 
             int i = 0;
             foreach (var t in values)
             {
-                if (i == _inner.Length)
+                if (i == _array.Length)
                 {
-                    Resize(_inner.Length * 2);
+                    Resize(_array.Length * 2);
                 }
 
-                _inner[i++] = t;
+                _array[i++] = t;
             }
 
             // As we pre-emptively resize to avoid thrashing the heap, we now need to resize down
@@ -61,22 +61,22 @@ namespace NeoSmart.Collections
 
         private void CopyReadOnlyList(IReadOnlyList<T> values)
         {
-            _inner = new T[values.Count];
+            _array = new T[values.Count];
             for (int i = 0; i < values.Count; ++i)
             {
-                _inner[i] = values[i];
+                _array[i] = values[i];
             }
         }
 
         public void Resize(int size)
         {
-            Array.Resize(ref _inner, size);
+            System.Array.Resize(ref _array, size);
         }
 
         public T this[int index]
         {
-            get => _inner[index];
-            set => _inner[index] = value;
+            get => _array[index];
+            set => _array[index] = value;
         }
 
         public void Append(T[] values)
@@ -86,24 +86,24 @@ namespace NeoSmart.Collections
 
         public void Append(T[] values, int startIndex, int count)
         {
-            int oldIndex = Inner.Length;
-            Array.Resize(ref _inner, Inner.Length + count);
-            Array.Copy(values, startIndex, _inner, oldIndex, count);
+            int oldIndex = Array.Length;
+            System.Array.Resize(ref _array, Array.Length + count);
+            System.Array.Copy(values, startIndex, _array, oldIndex, count);
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            return ((IList<T>)_inner).GetEnumerator();
+            return ((IList<T>)_array).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return _inner.GetEnumerator();
+            return _array.GetEnumerator();
         }
 
         public void CopyTo(Array array, int index)
         {
-            _inner.CopyTo(array, index);
+            _array.CopyTo(array, index);
         }
     }
 }
