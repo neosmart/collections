@@ -79,16 +79,16 @@ namespace NeoSmart.Collections
             set => _inner[index] = value;
         }
 
-        public void Append(T[] bytes)
+        public void Append(T[] values)
         {
-            Append(bytes, 0, bytes.Length);
+            Append(values, 0, values.Length);
         }
 
-        public void Append(T[] bytes, int startIndex, int count)
+        public void Append(T[] values, int startIndex, int count)
         {
             int oldIndex = Inner.Length;
             Array.Resize(ref _inner, Inner.Length + count);
-            Array.Copy(bytes, startIndex, _inner, oldIndex, count);
+            Array.Copy(values, startIndex, _inner, oldIndex, count);
         }
 
         public IEnumerator<T> GetEnumerator()
