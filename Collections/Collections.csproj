@@ -17,7 +17,9 @@
     <PackageTags>collections,SortedList,UniqueSortedList,ResizableArray</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup>
-  </ItemGroup>
+<PropertyGroup>
+  <IncludeSymbols>true</IncludeSymbols>
+  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+</PropertyGroup>
 
 </Project>
