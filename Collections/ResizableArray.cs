@@ -14,9 +14,9 @@ namespace NeoSmart.Collections
 
         public bool IsReadOnly => false;
 
-        public bool IsSynchronized => ((ICollection)_inner).IsSynchronized;
+        public bool IsSynchronized => false;
 
-        public object SyncRoot => ((ICollection)_inner).SyncRoot;
+        public object SyncRoot => this;
 
         public ResizableArray()
             : this(0)
@@ -26,6 +26,46 @@ namespace NeoSmart.Collections
         public ResizableArray(int initialSize)
         {
             _inner = new T[initialSize];
+        }
+
+        public ResizableArray(IReadOnlyList<T> values)
+        {
+            CopyReadOnlyList(values);
+        }
+
+        public ResizableArray(IEnumerable<T> values)
+        {
+            if (values is IReadOnlyList<T> list)
+            {
+                CopyReadOnlyList(list);
+                return;
+            }
+
+            int initialCapacity = 2;
+            _inner = new T[initialCapacity];
+
+            int i = 0;
+            foreach (var t in values)
+            {
+                if (i == _inner.Length)
+                {
+                    Resize(_inner.Length * 2);
+                }
+
+                _inner[i++] = t;
+            }
+
+            // As we pre-emptively resize to avoid thrashing the heap, we now need to resize down
+            Resize(i);
+        }
+
+        private void CopyReadOnlyList(IReadOnlyList<T> values)
+        {
+            _inner = new T[values.Count];
+            for (int i = 0; i < values.Count; ++i)
+            {
+                _inner[i] = values[i];
+            }
         }
 
         public void Resize(int size)
@@ -39,12 +79,12 @@ namespace NeoSmart.Collections
             set => _inner[index] = value;
         }
 
-        public void Append(byte[] bytes)
+        public void Append(T[] bytes)
         {
             Append(bytes, 0, bytes.Length);
         }
 
-        public void Append(byte[] bytes, int startIndex, int count)
+        public void Append(T[] bytes, int startIndex, int count)
         {
             int oldIndex = Inner.Length;
             Array.Resize(ref _inner, Inner.Length + count);
