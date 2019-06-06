@@ -3,10 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28917.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortedList", "SortedList\SortedList.csproj", "{4F9C24EB-2285-4AF4-993E-21D8746F1C01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "Collections\Collections.csproj", "{4F9C24EB-2285-4AF4-993E-21D8746F1C01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortedList.Tests", "SortedList.Tests\SortedList.Tests.csproj", "{F47ABBE7-5B17-42F1-8E1B-F264191D6809}"
-EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortedList.Tests", "Collections.Tests\Collections.Tests.csproj", "{F47ABBE7-5B17-42F1-8E1B-F264191D6809}"
+EndProject.
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

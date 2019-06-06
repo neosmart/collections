@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>NeoSmart.Collections.Tests</AssemblyName>
+
+    <RootNamespace>NeoSmart.Collections.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SortedList\SortedList.csproj" />
+    <ProjectReference Include="..\Collections\Collections.csproj" />
   </ItemGroup>
 
 </Project>

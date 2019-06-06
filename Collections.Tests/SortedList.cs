@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace SortedList.Tests
+namespace NeoSmart.Collections.Tests
 {
     [TestClass]
     public class SortedListTests

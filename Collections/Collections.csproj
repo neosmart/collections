@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>NeoSmart.Collections</AssemblyName>
+    <RootNamespace>NeoSmart.Collections</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
