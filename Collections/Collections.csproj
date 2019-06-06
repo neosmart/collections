@@ -4,6 +4,17 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>NeoSmart.Collections</AssemblyName>
     <RootNamespace>NeoSmart.Collections</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1</Version>
+    <Authors>neosmart, Mahmoud Al-Qudsi</Authors>
+    <Company>NeoSmart Techonlogies</Company>
+    <Description>A collection of various containers and data structures for .NET Standard. Includes a real sorted list (NeoSmart.Collections.SortedList), a unique sorted list (NeoSmart.Collections.UniqueSortedList), and a publicly resizable array (NeoSmart.Collections.ResizableArray)</Description>
+    <Copyright>NeoSmart Technologies 2019</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/neosmart/collections</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/neosmart/collections</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>collections,SortedList,UniqueSortedList,ResizableArray</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
