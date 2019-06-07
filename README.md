@@ -5,6 +5,9 @@ collections not found (at least at the time of this publication) in the .NET Sta
 collections are modelled after those in `System.Collections` in the hope that .NET developers will
 find them both familiar and useful.
 
+You can read more about this library and the inspiration for it in [the official release
+announcement](https://neosmart.net/blog/2019/sorted-list-vs-binary-search-tree/).
+
 ## Why does this exist?
 
 This is a collection of data structures and collections designed to serve as performant alternatives
@@ -16,11 +19,13 @@ The collections included in the .NET Standard BCL are general purpose collection
 operate with acceptable performance for the vast majority of .NET developers, under widely varying
 circumstances. With regards to performance, the primary focus is on the average case and reasonable
 efforts were made to avoid pathological behavior. **This is not the case here**. These data
-structures were written for specific use cases in which big-O ceases to have any meaning, and offer
-blazing performance only when used as intended. Assumptions are made allowing the design or curation
-of algorithms that would otherwise be suboptimal for the general case.
+structures [were written for specific use
+cases](https://neosmart.net/blog/2019/sorted-list-vs-binary-search-tree/) in which big-O ceases to
+have any meaning, and offer blazing performance only when used as intended. Assumptions are made
+allowing the design or curation of algorithms that would otherwise be suboptimal for the general
+case.
 
-## License, Authorship, and Project Status
+## License, authorship, and project status
 
 `NeoSmart.Collections` is written by Mahmoud Al-Qudsi of NeoSmart Technologies, and is released to
 the general public under the terms of the MIT open source license. It is currently being maintained
