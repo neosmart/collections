@@ -45,15 +45,17 @@ with updates and new collections added as they are needed by the author's other 
 
 ## Installation
 
-`NeoSmart.Collections` is available on nuget.org and may be installed in the Visual Studio Package
-Manager:
+`NeoSmart.Collections` is available [on
+nuget.org](https://www.nuget.org/packages/NeoSmart.Collections) and may be installed via the Visual
+Studio Package Manager:
 
 ```
 Install-Package NeoSmart.Collections
 ```
 
 Release are [also available on GitHub](https://github.com/neosmart/collections/releases), and the
-bleeding edge version of the code may be obtained by cloning this repository.
+bleeding edge version of the code may be obtained by cloning [this
+repository](https://github.com/neosmart/collections/).
 
 ## Contributing
 
