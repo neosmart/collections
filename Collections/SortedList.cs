@@ -5,10 +5,9 @@ using System.Collections.Generic;
 namespace NeoSmart.Collections
 {
     public class SortedList<T> : ICollection, ICollection<T>, IReadOnlyList<T>
-        where T: IComparable<T>
     {
-        private List<T> _list;
-        private IComparer<T> _compare;
+        private readonly List<T> _list;
+        private readonly IComparer<T> _compare;
 
         public SortedList()
             : this(Comparer<T>.Default)
