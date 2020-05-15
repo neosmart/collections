@@ -14,6 +14,11 @@ namespace NeoSmart.Collections
         {
         }
 
+        public SortedList(int capacity)
+            : this(capacity, Comparer<T>.Default)
+        {
+        }
+
         public SortedList(int capacity, IComparer<T> comparer)
         {
             _list = new List<T>(capacity);
