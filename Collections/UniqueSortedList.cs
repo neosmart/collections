@@ -67,10 +67,7 @@ namespace NeoSmart.Collections
         {
         }
 
-        public T this[int index]
-        {
-            get => _list[index];
-        }
+        public T this[int index] => _list[index];
 
         public T Min => _list[0];
         public T Max => _list[Count - 1];
@@ -83,24 +80,28 @@ namespace NeoSmart.Collections
 
         public object? SyncRoot => null;
 
-        public void Add(T item)
+        void ICollection<T>.Add(T item) => Add(item);
+
+        public bool Add(T item)
         {
             // Optimization: when inserting in order, don't search
             //if (_list.Count == 0 || _compare.Compare(item, _list[_list.Count - 1]) >= 0)
             if (_list.Count == 0 || _compare.Compare(item, _list[_list.Count - 1]) > 0)
             {
                 _list.Add(item);
-                return;
+                return true;
             }
 
             var index = IndexOf(item);
             if (index >= 0)
             {
-                // _list.Insert(index, item);
+                // Item already in set
+                return false;
             }
             else
             {
                 _list.Insert(~index, item);
+                return true;
             }
         }
 
