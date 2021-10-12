@@ -57,7 +57,7 @@ namespace NeoSmart.Collections
 
         public bool IsSynchronized => false;
 
-        public object? SyncRoot => null;
+        public object SyncRoot => this;
 
         public void Add(T item)
         {

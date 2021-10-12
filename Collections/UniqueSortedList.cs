@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NeoSmart.Collections
 {
@@ -78,7 +77,7 @@ namespace NeoSmart.Collections
 
         public bool IsSynchronized => false;
 
-        public object? SyncRoot => null;
+        public object SyncRoot => this;
 
         void ICollection<T>.Add(T item) => Add(item);
 

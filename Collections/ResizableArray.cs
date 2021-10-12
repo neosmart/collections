@@ -30,6 +30,8 @@ namespace NeoSmart.Collections
 
         public ResizableArray(IReadOnlyList<T> values)
         {
+            // _array is initialized by CopyReadOnlyList()
+            _array = System.Array.Empty<T>();
             CopyReadOnlyList(values);
         }
 
@@ -37,6 +39,8 @@ namespace NeoSmart.Collections
         {
             if (values is IReadOnlyList<T> list)
             {
+                // _array is initialized by CopyReadOnlyList()
+                _array = System.Array.Empty<T>();
                 CopyReadOnlyList(list);
                 return;
             }
