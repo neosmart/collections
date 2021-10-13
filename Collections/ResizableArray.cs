@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace NeoSmart.Collections
 {
-    public class ResizableArray<T> :  ICollection, IReadOnlyList<T>
+    public sealed class ResizableArray<T> :  ICollection, IReadOnlyList<T>
     {
         private T[] _array;
         public T[] Array => _array;

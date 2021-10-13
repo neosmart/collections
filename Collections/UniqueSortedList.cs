@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace NeoSmart.Collections
 {
-    public class UniqueSortedList<T> : ICollection, ICollection<T>, IReadOnlyList<T>
+    public sealed class UniqueSortedList<T> : ICollection, ICollection<T>, IReadOnlyList<T>
     {
         private readonly List<T> _list;
         private readonly IComparer<T> _compare;
