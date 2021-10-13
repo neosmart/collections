@@ -157,9 +157,39 @@ namespace NeoSmart.Collections
             return _list.GetEnumerator();
         }
 
+        /// <summary>
+        /// Retrieves the index of the item in the <c>UniqueSortedList</c> that matches the search <paramref name="item"/>,
+        /// compared using the comparer provided at the time the <c>UniqueSortedList</c> was initialized (or the default
+        /// type comparer otherwise).
+        /// </summary>
+        /// <param name="item">The item to retrieve the index of.</param>
+        /// <returns>
+        /// The zero-based index of item in the sorted System.Collections.Generic.List`1,
+        /// if item is found; otherwise, a negative number that is the bitwise complement
+        /// of the index of the next element that is larger than item or, if there is no
+        /// larger element, the bitwise complement of <c>UniqueSortedList&lt;T&gt;.Count</c>
+        /// </returns>
         public int IndexOf(T item)
         {
             return _list.BinarySearch(item, _compare);
+        }
+
+        /// <summary>
+        /// Retrieves the index of the item in the <c>UniqueSortedList</c> that matches the search <paramref name="item"/>,
+        /// compared using the comparer provided as the <paramref name="comparer"/> parameter, if not null.
+        /// Otherwise, the comparer that was provided at the time the <c>UniqueSortedList</c> was initialized is used,
+        /// or the default type comparer if none was provided.
+        /// </summary>
+        /// <param name="item">The item to retrieve the index of.</param>
+        /// <returns>
+        /// The zero-based index of item in the sorted System.Collections.Generic.List`1,
+        /// if item is found; otherwise, a negative number that is the bitwise complement
+        /// of the index of the next element that is larger than item or, if there is no
+        /// larger element, the bitwise complement of <c>UniqueSortedList&lt;T&gt;.Count</c>
+        /// </returns>
+        public int BinarySearch(T item, IComparer<T>? comparer)
+        {
+            return _list.BinarySearch(item, comparer ?? _compare);
         }
 
         public bool Remove(T item)
