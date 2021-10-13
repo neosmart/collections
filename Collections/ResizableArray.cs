@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NeoSmart.Collections
 {
@@ -45,6 +46,12 @@ namespace NeoSmart.Collections
             }
 
             int initialCapacity = 2;
+#if NET6_0_OR_GREATER
+            if (values.TryGetNonEnumeratedCount(out var count))
+            {
+                initialCapacity = count;
+            }
+#endif
             _array = new T[initialCapacity];
 
             int i = 0;
@@ -73,6 +80,11 @@ namespace NeoSmart.Collections
 
         public void Resize(int size)
         {
+            if (size == _array.Length)
+            {
+                return;
+            }
+
             System.Array.Resize(ref _array, size);
         }
 
