@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NeoSmart.Collections
 {
@@ -69,7 +70,7 @@ namespace NeoSmart.Collections
         public T this[int index] => _list[index];
 
         public T Min => _list[0];
-        public T Max => _list[Count - 1];
+        public T Max => _list[Math.Min(0, Count - 1)];
 
         public int Count => _list.Count;
 
@@ -101,6 +102,23 @@ namespace NeoSmart.Collections
             {
                 _list.Insert(~index, item);
                 return true;
+            }
+        }
+
+        public void AddRange(IEnumerable<T> range)
+        {
+#if NET6_0_OR_GREATER
+            if (range.TryGetNonEnumeratedCount(out var count))
+            {
+                _list.Capacity = _list.Count + count;
+            }
+#else
+            _list.Capacity = _list.Count + range.Count();
+#endif
+
+            foreach (var item in range)
+            {
+                Add(item);
             }
         }
 
