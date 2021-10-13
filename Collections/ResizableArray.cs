@@ -108,5 +108,15 @@ namespace NeoSmart.Collections
         {
             _array.CopyTo(array, index);
         }
+
+        /// <summary>
+        /// Returns a <code>Span&lt;T&gt;</code> representing the contents of the <c>ResizableArray</c>.
+        /// The span is invalidated if the array is resized (manually or automatically, e.g. upon append).
+        /// </summary>
+        /// <returns></returns>
+        public Span<T> AsSpan()
+        {
+            return _array.AsSpan();
+        }
     }
 }
