@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
+#if NET6_0_OR_GREATER
 using System.Linq;
+#endif
 
 namespace NeoSmart.Collections
 {
