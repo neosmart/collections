@@ -105,7 +105,14 @@ namespace NeoSmart.Collections
             }
         }
 
-        public void AddRange(IEnumerable<T> range)
+        /// <summary>
+        /// Adds the values found in <paramref name="range"/> to the <c>UniqueSortedList</c>,
+        /// preserving the list order at all times. If a value already exists in the list, it
+        /// is not added.
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns>The total number of items added, duplicates excluded.</returns>
+        public int AddRange(IEnumerable<T> range)
         {
 #if NET6_0_OR_GREATER
             if (range.TryGetNonEnumeratedCount(out var count))
@@ -116,10 +123,13 @@ namespace NeoSmart.Collections
             _list.Capacity = _list.Count + range.Count();
 #endif
 
+            int added = 0;
             foreach (var item in range)
             {
-                Add(item);
+                added += Add(item) ? 1 : 0;
             }
+
+            return added;
         }
 
         public void Clear()
