@@ -5,7 +5,7 @@
   <AssemblyName>NeoSmart.Collections</AssemblyName>
   <RootNamespace>NeoSmart.Collections</RootNamespace>
   <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  <Version>1.0.0</Version>
+  <Version>1.1.0</Version>
   <Nullable>Enable</Nullable>
   <Authors>Mahmoud Al-Qudsi, neosmart</Authors>
   <Company>NeoSmart Techonlogies</Company>
@@ -16,7 +16,7 @@
   <RepositoryUrl>https://github.com/neosmart/collections</RepositoryUrl>
   <RepositoryType>git</RepositoryType>
   <PackageTags>collections,SortedList,UniqueSortedList,ResizableArray</PackageTags>
-  <FileVersion>1.0.0</FileVersion>
+  <FileVersion>1.1.0</FileVersion>
   <ImplicitUsings>false</ImplicitUsings>
   <LangVersion>latest</LangVersion>
   </PropertyGroup>
