@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace NeoSmart.Collections.Tests
@@ -22,7 +21,7 @@ namespace NeoSmart.Collections.Tests
         private List<int> GetUnsortedNumbers(int count)
         {
             var list = new List<int>(count);
-            var rng = new System.Random(0xC0FFEE ^ count);
+            var rng = new Random(0xC0FFEE ^ count);
 
             for (int i = 0; i < count; ++i)
             {
