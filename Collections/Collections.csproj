@@ -1,34 +1,32 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.3;netstandard2.0;net5;net6</TargetFrameworks>
-    <PackageId>NeoSmart.Collections</PackageId>
-    <AssemblyName>NeoSmart.Collections</AssemblyName>
-    <RootNamespace>NeoSmart.Collections</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
-    <Nullable>Enable</Nullable>
-    <Authors>Mahmoud Al-Qudsi, neosmart</Authors>
-    <Company>NeoSmart Techonlogies</Company>
-    <Description>A collection of various containers and data structures for .NET Standard. Includes a real sorted list (NeoSmart.Collections.SortedList), a unique sorted list (NeoSmart.Collections.UniqueSortedList), and a publicly resizable array (NeoSmart.Collections.ResizableArray)</Description>
-    <Copyright>NeoSmart Technologies 2019-2021</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/neosmart/collections</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/neosmart/collections</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>collections,SortedList,UniqueSortedList,ResizableArray</PackageTags>
-    <FileVersion>1.0.0</FileVersion>
-    <LangVersion>latest</LangVersion>
+  <TargetFrameworks>netstandard1.3;netstandard2.0;net5;net6</TargetFrameworks>
+  <PackageId>NeoSmart.Collections</PackageId>
+  <AssemblyName>NeoSmart.Collections</AssemblyName>
+  <RootNamespace>NeoSmart.Collections</RootNamespace>
+  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  <Version>1.0.0</Version>
+  <Nullable>Enable</Nullable>
+  <Authors>Mahmoud Al-Qudsi, neosmart</Authors>
+  <Company>NeoSmart Techonlogies</Company>
+  <Description>A collection of various containers and data structures for .NET Standard. Includes a real sorted list (NeoSmart.Collections.SortedList), a unique sorted list (NeoSmart.Collections.UniqueSortedList), and a publicly resizable array (NeoSmart.Collections.ResizableArray)</Description>
+  <Copyright>NeoSmart Technologies 2019-2021</Copyright>
+  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  <PackageProjectUrl>https://github.com/neosmart/collections</PackageProjectUrl>
+  <RepositoryUrl>https://github.com/neosmart/collections</RepositoryUrl>
+  <RepositoryType>git</RepositoryType>
+  <PackageTags>collections,SortedList,UniqueSortedList,ResizableArray</PackageTags>
+  <FileVersion>1.0.0</FileVersion>
+  <ImplicitUsings>false</ImplicitUsings>
+  <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' != 'net5' and '$(TargetFramework)' != 'net6'">
+	<PackageReference Include="System.Memory" Version="4.5.4" />
+  </ItemGroup>
 
-<ItemGroup Condition="'$(TargetFramework)' != 'net5' and '$(TargetFramework)' != 'net6'">
-  <PackageReference Include="System.Memory" Version="4.5.4" />
-</ItemGroup>
-
-<PropertyGroup>
-  <IncludeSymbols>true</IncludeSymbols>
-  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-</PropertyGroup>
-
+  <PropertyGroup>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
 </Project>

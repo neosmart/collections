@@ -1,5 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6</TargetFramework>
 
@@ -8,6 +7,9 @@
     <AssemblyName>NeoSmart.Collections.Tests</AssemblyName>
 
     <RootNamespace>NeoSmart.Collections.Tests</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,5 +21,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Collections\Collections.csproj" />
   </ItemGroup>
-
 </Project>
