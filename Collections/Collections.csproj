@@ -28,5 +28,7 @@
   <PropertyGroup>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>NeoSmart.Collections.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 </Project>
