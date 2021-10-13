@@ -7,7 +7,7 @@ namespace NeoSmart.Collections
     public sealed class ResizableArray<T> :  ICollection, IReadOnlyList<T>
     {
         private T[] _array;
-        public T[] Array => _array;
+        public ref T[] Array => ref _array;
 
         public int Count => _array.Length;
 
