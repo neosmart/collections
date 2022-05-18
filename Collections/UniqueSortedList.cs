@@ -208,6 +208,11 @@ namespace NeoSmart.Collections
             _list.RemoveAt(index);
         }
 
+        public void RemoveRange(int index, int count)
+        {
+            _list.RemoveRange(index, count);
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return _list.GetEnumerator();
