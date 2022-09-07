@@ -5,17 +5,17 @@
   <AssemblyName>NeoSmart.Collections</AssemblyName>
   <RootNamespace>NeoSmart.Collections</RootNamespace>
   <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  <Version>1.2.0</Version>
+  <Version>1.3.0</Version>
   <Nullable>Enable</Nullable>
   <Authors>Mahmoud Al-Qudsi, neosmart</Authors>
   <Company>NeoSmart Techonlogies</Company>
-  <Description>A collection of various containers and data structures for .NET Standard. Includes a real sorted list (NeoSmart.Collections.SortedList), a unique sorted list (NeoSmart.Collections.UniqueSortedList), and a publicly resizable array (NeoSmart.Collections.ResizableArray)</Description>
+  <Description>A collection of various containers and data structures for .NET Standard. Includes a real sorted list (NeoSmart.Collections.SortedList), a unique sorted list (NeoSmart.Collections.UniqueSortedList), a publicly resizable array (NeoSmart.Collections.ResizableArray), and a disposable list (NeoSmart.Collections.DisposableList).</Description>
   <Copyright>NeoSmart Technologies 2019-2022</Copyright>
   <PackageLicenseExpression>MIT</PackageLicenseExpression>
   <PackageProjectUrl>https://github.com/neosmart/collections</PackageProjectUrl>
   <RepositoryUrl>https://github.com/neosmart/collections</RepositoryUrl>
   <RepositoryType>git</RepositoryType>
-  <PackageTags>collections,SortedList,UniqueSortedList,ResizableArray</PackageTags>
+  <PackageTags>collections,SortedList,ResizableArray,DisposableList</PackageTags>
   <ImplicitUsings>false</ImplicitUsings>
   <LangVersion>latest</LangVersion>
   </PropertyGroup>
