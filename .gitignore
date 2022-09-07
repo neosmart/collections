@@ -1,3 +1,5 @@
 .vs
 bin
 obj
+/README.pdf
+/docs/*.pdf

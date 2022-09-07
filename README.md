@@ -42,6 +42,7 @@ with updates and new collections added as they are needed by the author's other 
   directly exposes various typically accessed via `Array.*` methods, to be used when you'd use a
   `List<T>` but you need to also directly access the underlying array to interop with poorly
   designed APIs.
+* [`DisposableList<T>`](docs/DisposableList.md), a specialized `List<T>` implementing `IDispose` and calling `T.Dispose()` on all its  elements when `DisposableList<T>.Dispose()` is called.
 
 ## Installation
 
@@ -52,6 +53,8 @@ Studio Package Manager:
 ```
 Install-Package NeoSmart.Collections
 ```
+
+All types will be in the `NeoSmart.Collections` namespace.
 
 Release are [also available on GitHub](https://github.com/neosmart/collections/releases), and the
 bleeding edge version of the code may be obtained by cloning [this
